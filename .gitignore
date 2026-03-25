@@ -10,3 +10,6 @@ __pycache__/
 frontend/dist/
 backend/venv/
 dataset.zip
+.claude
+.vercel
+sap-o2c-data
