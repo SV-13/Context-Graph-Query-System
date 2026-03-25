@@ -3,7 +3,8 @@ import GraphView from './components/GraphView'
 import ChatPanel from './components/ChatPanel'
 import NodeDetail from './components/NodeDetail'
 
-const API_BASE = import.meta.env.VITE_API_URL || ''
+// Use /api for production (rewrites will handle routing), or env var if explicit
+const API_BASE = '/api'
 
 export default function App() {
   const [graphData, setGraphData] = useState({ nodes: [], links: [] })
