@@ -89,9 +89,17 @@ Customer → Sales Order → Delivery → Billing Document → Journal Entry →
 │   │   └── styles/App.css
 │   ├── package.json
 │   └── vite.config.js
-├── sap-o2c-data/              # Raw JSONL dataset (19 entity folders)
+├── sap-o2c-data/              # Raw dataset (not included, see Dataset section)
 └── README.md
 ```
+
+## Dataset
+
+The raw dataset (`sap-o2c-data/`) is not included in this repository due to size constraints.
+
+Please download it from: [https://drive.google.com/file/d/1UqaLbFaveV-3MEuiUrzKydhKmkeC1iAL/view?usp=sharing]
+
+After downloading, place the folder in the project root:
 
 ## Setup & Running
 
