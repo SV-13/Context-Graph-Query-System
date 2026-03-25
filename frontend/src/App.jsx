@@ -3,8 +3,11 @@ import GraphView from './components/GraphView'
 import ChatPanel from './components/ChatPanel'
 import NodeDetail from './components/NodeDetail'
 
-// Use /api for production (rewrites will handle routing), or env var if explicit
-const API_BASE = '/api'
+// Prefer explicit env override, otherwise call the deployed backend directly.
+const API_BASE =
+  import.meta.env.VITE_API_BASE ||
+  import.meta.env.VITE_API_URL ||
+  'https://context-graph-query-system.onrender.com'
 
 export default function App() {
   const [graphData, setGraphData] = useState({ nodes: [], links: [] })

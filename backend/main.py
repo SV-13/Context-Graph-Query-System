@@ -56,12 +56,15 @@ app = FastAPI(
 )
 
 # CORS - allow frontend origins
-allowed_origins = [
-    "http://localhost:5173",
-    "http://localhost:3000",
-]
+allowed_origins = []
+frontend_urls = os.environ.get("FRONTEND_URLS", "")
 frontend_url = os.environ.get("FRONTEND_URL", "")
-if frontend_url:
+
+if frontend_urls:
+    allowed_origins.extend([
+        url.strip() for url in frontend_urls.split(",") if url.strip()
+    ])
+if frontend_url and frontend_url not in allowed_origins:
     allowed_origins.append(frontend_url)
 
 app.add_middleware(
